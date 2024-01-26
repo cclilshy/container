@@ -1,0 +1,17 @@
+{
+  "name": "cclilshy/container",
+  "autoload": {
+    "psr-4": {
+      "Cclilshy\\Container\\": "src/"
+    }
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "cclilshy",
+      "email": "jingnigg@gmail.com"
+    }
+  ],
+  "require": {},
+  "version": "v1.0.0"
+}
