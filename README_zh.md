@@ -1,7 +1,3 @@
-## Container
-
-查看文档: [Document](https://cloudtay.github.io/p-ripple-document/base/2024-01-01-0x02-container.html)
-
 ## 容器(Container)
 
 Class `Core\Container\Container`
@@ -41,15 +37,17 @@ class Session{
 ## 主动执行函数(Call function)
 
 ```php
-$container->callUserFunction();
+$container->callUserFunction(function(Session $session){
+
+});
 $container->callUserFunctionArray();
 ```
 
 > PRipple的容器利用了PHP的反射机制,使得开发者可以主动以容器的视角
 > 像原生`call_user_function`以及`call_user_function_array`
-> 一样去调用方法,支持对象/静态方法/匿名函数,容器将会自动构建方法的依赖关系并注入
+> 一样去调用方法,支持对象/静态方法/匿名函数,容器将会自动构建方法的依赖关系并执行对应方法
 
 ## 附言(Postscript)
 
-> 容器当目标方法存在基础内建类型的参数如`string`时,将会自动使用默认值,
-> 如目标方法未提供默认值,将会抛出异常
+> 容器当目标方法存在基础内建类型的参数如`string`时,将会自动使用默认值
+> 如目标方法/构造方法的基础内建类型未提供默认值,将会在调用时抛出异常

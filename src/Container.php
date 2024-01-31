@@ -70,6 +70,9 @@ class Container
     public function __construct()
     {
         $this->dependenceMap[Container::class] = $this;
+        if (get_class($this) !== Container::class) {
+            $this->inject(get_class($this), $this);
+        }
     }
 
     /**
